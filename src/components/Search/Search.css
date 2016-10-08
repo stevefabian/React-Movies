@@ -25,3 +25,7 @@
 .hidden {
     display: none;
 }
+
+.btnAddToFavorites {
+    margin-left: 13px;
+}

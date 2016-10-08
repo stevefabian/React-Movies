@@ -1,37 +1,45 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
+import {connect} from 'react-redux';
+import * as movieActions from '../../actions/movieActions';
+
 import './Search.css';
 
 class SearchResults extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            movie: {
+                title: '',
+                total_results: 0
+            }
+        }
+        this.saveFavorite = this.saveFavorite.bind(this);
+    }
+    saveFavorite() {
+        this.props.dispatch(
+            movieActions.saveMovie(this.props.movie)
+            );
+        this.context.router.push('/');
+    }
     render() {
         return (
             <div className="search-results container-fluid">
             <div className="row">
                 <div className="col-sm-6 col-md-6">
                     <div className="movie-title">
-                        {this.props.movie.Title}
+                        {this.props.movie.title}<br />
+                        {this.props.movie.release_date && <button className='btnAddToFavorites btn btn-default' onClick={this.saveFavorite}>Add to Favorites</button>}
                     </div>
                     <div>
-                        {this.props.movie.Year}
-                    </div>
-                    <div>
-                        <i className="movie-awards">{this.props.movie.Awards}</i><br />
+                        <br />
+                        {this.props.movie.release_date}
                     </div>
                     <div className="movie-plot">
-                        {this.props.movie.Plot}
-                    </div>
-                    <div className="movie-actors">
-                        <div className={this.props.movie.Response !== 'True' ? 'hidden' : ''}>
-                            Actors<br />
-                            <ul>
-                            {this.props.movie.Actors.map(function(el){
-                                return <li>{el}</li>
-                            })}
-                            </ul>
-                        </div>
+                        {this.props.movie.overview}
                     </div>
                 </div>
                 <div className="col-sm-6 col-md-6">
-                    <img src={this.props.movie.Poster} alt="" />
+                    <img src={this.props.movie.poster} alt="" />
                 </div>
             </div>
             </div>
@@ -39,4 +47,14 @@ class SearchResults extends Component {
     }
 }
 
-export default SearchResults;
+SearchResults.contextTypes = {
+    router: PropTypes.object
+};
+
+function mapStateToProps(state, ownProps){
+    return {
+        movies: state.movies
+    };
+}
+
+export default connect(mapStateToProps)(SearchResults);

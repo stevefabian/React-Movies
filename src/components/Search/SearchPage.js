@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import SearchResults from './SearchResultsComponent';
+
 import './Search.css';
 import $ from 'jquery';
 
-class Search extends Component {
+class SearchPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
             movie: {
-                Title: '',
-                Actors: [],
-                Response: 'False'
+                title: '',
+                total_results: 0
             }
         }
         this.handleClick = this.handleClick.bind(this);
@@ -19,17 +19,17 @@ class Search extends Component {
         event.preventDefault();
         var self = this;
         // call api to get movie
-        $.get( "http://omdbapi.com?t=" + $('#txtFilter').val(), function( data ) {
-            if (data.Response === 'True') {
-              // split actors into array
-              data.Actors = data.Actors.split(",");
-              self.setState({ movie: data });
+        var _url = "https://api.themoviedb.org/3/search/movie?api_key=eb14ede7d8298fa1c6d6c78bc55eefb7&language=en-US&query=";
+
+        $.get( _url + $('#txtFilter').val(), function( data ) {
+            if (data.total_results > 0) {
+              data.results[0].poster = "http://image.tmdb.org/t/p/w300" + data.results[0].poster_path;
+              self.setState({ movie: data.results[0] });
             }
             else {
               self.setState({ movie: {
-                  Title: 'Movie not found',
-                  Actors: [],
-                  Response: 'False'
+                  title: 'Movie not found',
+                  total_results: 0
               }});
             }
         });
@@ -37,6 +37,9 @@ class Search extends Component {
     render() {
         return (
             <div>
+                <div>
+                Enter a Movie Name, or partial movie name in the search box below and click the Go! button
+                </div>
                 <div className="input-group">
                     <input id="txtFilter" type="text" className="form-control" placeholder="Search for..." />
                     <span className="input-group-btn">
@@ -49,4 +52,4 @@ class Search extends Component {
     }
 }
 
-export default Search;
+export default SearchPage;

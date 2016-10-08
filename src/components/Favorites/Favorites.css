@@ -1,0 +1,27 @@
+.fp-container {
+    padding-left: 3px;
+}
+
+.fp-title {
+    font-size: large;
+    color: darkslategray;
+    font-weight: 800;
+}
+
+.favorite-container .title {
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.poster-container {
+    padding: 5px;
+}
+
+.favorite-container .poster {
+    width:100%;
+}
+
+.btnAddToFavorites {
+    position: relative;
+    left: -13px;
+}

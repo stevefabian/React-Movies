@@ -1,0 +1,16 @@
+.nb-container {
+    margin-bottom: 13px;
+    background-color: black;
+    padding: 8px;
+    font-size: 20px;
+    color: white;
+}
+
+.active {
+    background-color: #e2e2e2;
+    color: black;
+}
+
+li a {
+    color: white;
+}
