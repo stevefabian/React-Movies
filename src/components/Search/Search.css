@@ -1,0 +1,27 @@
+.search-results {
+    padding-top: 23px;
+    font-size: large;
+}
+
+.movie-title {
+    font-size: larger;
+    font-weight: 900;
+}
+
+.movie-awards {
+    font-size: medium;
+    color: dimgray;
+}
+
+.movie-plot {
+    padding-top: 13px;
+}
+
+.movie-actors {
+    padding-top: 13px;
+    font-style: italic;
+}
+
+.hidden {
+    display: none;
+}
