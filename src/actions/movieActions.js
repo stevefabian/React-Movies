@@ -29,7 +29,7 @@ export function saveMovie(movie) {
         var obj = {
             title: movie.title,
             poster: movie.poster,
-            userid: 'fabians',
+            userid: 'demo-user',
             note: ''
         }
         $.ajax({
