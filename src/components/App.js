@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import Hello from './Hello/Hello';
 import NavigationBar from './Navigation/NavigationBar';
 
@@ -13,9 +13,5 @@ class App extends Component {
     );
   }
 }
-
-App.PropTypes = {
-  children: PropTypes.object.isRequired
-};
 
 export default App;
