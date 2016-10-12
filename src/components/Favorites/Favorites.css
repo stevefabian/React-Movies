@@ -25,3 +25,13 @@
     position: relative;
     left: -13px;
 }
+
+.btn-remove {
+    position: absolute;
+    right: 25px;
+    bottom: 13px;
+}
+
+.btn-prompt {
+    margin-right: 13px;
+}

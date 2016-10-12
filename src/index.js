@@ -12,6 +12,9 @@ import AboutPage from './components/About/AboutPage';
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../node_modules/bootstrap/dist/css/bootstrap-theme.min.css';
+import '../node_modules/react-s-alert/dist/s-alert-default.css';
+import 'react-s-alert/dist/s-alert-css-effects/bouncyflip.css';
+import '../node_modules/rodal/lib/rodal.css';
 
 import './index.css';
 
