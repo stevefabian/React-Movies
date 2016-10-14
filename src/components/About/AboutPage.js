@@ -11,7 +11,14 @@ class AboutPage extends Component {
                 <div className='ap-content'>
                     This is a React Sample Application to
                     demonstrate building a web Application
-                    using React and Reflux
+                    using React and Redux
+                </div>
+                <div className='ap-content'>
+                    This application was developed and presented
+                    at the Northern NJ .NET User Group by Steve
+                    Fabian <br /><br />
+                    <a href='http://n3ug.org'>http://n3ug.org</a>
+                    <br /><br />
                 </div>
             </div>
         );

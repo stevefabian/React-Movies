@@ -8,6 +8,10 @@ export default function movieReducer(state = [], action) {
             ];
         case 'MOVIES_LOADED':
             return action.movies;
+        case 'MOVIE_REMOVED':
+            return [
+                ...state.filter(movie => movie.title !== action.movie.title)
+            ];
         default:
             return state;
     }

@@ -9,7 +9,7 @@ class FavoritesList extends Component {
             <div>
                 {this.props.movies.map(function(el, i){
                     return (
-                        <FavoritesItem item={el} />
+                        <FavoritesItem key={i} item={el} />
                     );
                 })}
             </div>
