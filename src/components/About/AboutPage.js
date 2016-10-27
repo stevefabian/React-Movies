@@ -19,6 +19,9 @@ class AboutPage extends Component {
                     Fabian <br /><br />
                     <a href='http://n3ug.org'>http://n3ug.org</a>
                     <br /><br />
+                    The full source code for this demo application is available 
+                    on GitHub at the following address<br />
+                    <a href="https://github.com/stevefabian/React-Movies">https://github.com/stevefabian/React-Movies</a><br />
                 </div>
             </div>
         );
